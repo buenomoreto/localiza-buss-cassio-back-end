@@ -1,0 +1,19 @@
+datasource db {  
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Point {
+  id String @id @default(uuid())
+  timer String
+  reference String
+  latitude String
+  longitude String
+  price String
+
+  @@map("points")
+}
